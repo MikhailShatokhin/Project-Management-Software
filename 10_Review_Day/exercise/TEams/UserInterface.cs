@@ -6,12 +6,17 @@ namespace TEams
 {
     class UserInterface
     {
-
+        public List<Department> departments = new List<Department>();
 
         public void Run()
         {
             // create some departments
             CreateDepartments();
+            {
+                departments.Insert(1, "Marketing"};
+                
+                return;
+            }
 
             // print each department by name
             PrintDepartments();
