@@ -107,15 +107,27 @@ namespace TEams
         private void CreateTeamsProject()
         {
             Project project1 = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
-            //project1.TeamMembers = employees;
-            for (int i=0; i<employees.Count; i++)
+            project1.TeamMembers = employees;
+            projects[project1.Name] = project1;
+            foreach (Employee n in project1.TeamMembers)
             {
-                if(employees[i].Department.Name == departments[2].Name)
+                if (n.Department.Name != "Engineering")
                 {
-                    project1.TeamMembers.Add(employees[i]);
+                    
+                    project1.TeamMembers.Remove(n);
+                    return;
                 }
-                projects[project1.Name] = project1;
             }
+
+
+
+            //{
+            //    if(employees[i].Department.Name == departments[2].Name)
+            //    {
+            //        project1.TeamMembers.Add(employees[i]);
+            //    }
+            //    
+            //}
         }
 
         /**
@@ -124,14 +136,15 @@ namespace TEams
         private void CreateLandingPageProject()
         {
             Project project2 = new Project("Marketing Landing Page", "Lead Capture Landing Page For Marketing", "10/10/2020", "10/17/2020");
-           //project2.TeamMembers = employees;
-            for (int i=0; i<employees.Count; i++)
+           project2.TeamMembers = employees;
+           projects[project2.Name] = project2;
+            foreach (Employee n in project2.TeamMembers)
             {
-                if(employees[i].Department.Name == departments[0].Name)
+                if (n.Department.Name != "Marketing")
                 {
-                    project2.TeamMembers.Add(employees[i]);
+                    project2.TeamMembers.Remove(n);
+                    return;
                 }
-                projects.Add(project2.Name, project2);
             }
         }
 
@@ -141,10 +154,10 @@ namespace TEams
         private void PrintProjectsReport()
         {
             Console.WriteLine("\n------------- PROJECTS ------------------------------");
-            for(int i=0; i<projects.Count; i++)
+            foreach(Project p in projects.Values)
             {
-                Console.WriteLine(projects.Keys);
+                Console.WriteLine($"{projects.Keys}: {projects.Values.Count}");
             }
         }
-    }
+    } 
 }
