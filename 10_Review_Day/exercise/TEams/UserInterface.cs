@@ -105,6 +105,7 @@ namespace TEams
          * Create the 'TEams' project.
          */
         private void CreateTeamsProject()
+        
         {
             Project project1 = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
             //project1.TeamMembers = employees;
@@ -112,9 +113,9 @@ namespace TEams
             {
                 if(employees[i].Department.Name == departments[2].Name)
                 {
-                    project1.TeamMembers.Add(employees[i]);
+                    projects[project1.Name] = project1;
                 }
-                projects[project1.Name] = project1;
+                
             }
         }
 
@@ -129,9 +130,9 @@ namespace TEams
             {
                 if(employees[i].Department.Name == departments[0].Name)
                 {
-                    project2.TeamMembers.Add(employees[i]);
+                    projects[project2.Name] = project2;
                 }
-                projects.Add(project2.Name, project2);
+                
             }
         }
 
@@ -141,10 +142,12 @@ namespace TEams
         private void PrintProjectsReport()
         {
             Console.WriteLine("\n------------- PROJECTS ------------------------------");
-            for(int i=0; i<projects.Count; i++)
-            {
-                Console.WriteLine(projects.Keys);
-            }
+           // foreach (Project p in projects)
+            //{
+                Console.WriteLine(projects.Keys +": "+projects.Values);
+           // }
+            
+            
         }
     }
 }
