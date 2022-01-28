@@ -8,7 +8,8 @@ namespace TEams
     {
         //instance variable / class varaible
         public List<Department> departments = new List<Department>();
-        
+
+        public List<Employee> employees = new List<Employee>();
         public void Run()
         {
             // create some departments
@@ -68,7 +69,16 @@ namespace TEams
          */
         private void CreateEmployees()
         {
-
+            Employee employee1 = new Employee();
+            employee1.FirstName = "Dean";
+            employee1.LastName = "Johnson";
+            employee1.Email = "djohnson@teams.com";
+            employee1.Salary = 60000;
+            employee1.Department = departments[2];
+            employee1.HireDate = "08/21/2020";
+            Employee employee2 = new Employee(2, "Angie", "Smith", "asmith@teams.com", departments[2], "08/21/2020");
+            Employee employee3 = new Employee(3, "Margaret", "Thompson", "mthompson@teams.com", departments[0], "08/21/2020");
+            employee2.RaiseSalary(10);
         }
 
         /**
@@ -77,7 +87,10 @@ namespace TEams
         private void PrintEmployees()
         {
             Console.WriteLine("\n------------- EMPLOYEES ------------------------------");
-
+            for (int people = 0; people < employees.Count; people++)
+            {
+                Console.WriteLine(employees[people].FullName + " (" + employees[people].Salary +") " + employees[people].Department);
+            }
         }
 
         /**
