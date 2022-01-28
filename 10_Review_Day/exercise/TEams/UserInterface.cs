@@ -155,8 +155,8 @@ namespace TEams
         {
             Console.WriteLine("\n------------- PROJECTS ------------------------------");
             foreach(Project p in projects.Values)
-            {
-                Console.WriteLine($"{projects.Keys}: {projects.Values.Count}");
+            { 
+                Console.WriteLine($"{p.Name}: {p.TeamMembers.Count}");
             }
         }
     } 
