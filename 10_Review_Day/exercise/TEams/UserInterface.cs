@@ -6,21 +6,17 @@ namespace TEams
 {
     class UserInterface
     {
+        //instance variable / class varaible
         public List<Department> departments = new List<Department>();
-
+        
         public void Run()
         {
             // create some departments
             CreateDepartments();
-            {
-                departments.Insert(1, "Marketing"};
-                
-                return;
-            }
-
+            
             // print each department by name
             PrintDepartments();
-
+            
             // create employees
             CreateEmployees();
 
@@ -45,7 +41,14 @@ namespace TEams
          */
         private void CreateDepartments()
         {
+            int[] departmentId = { 1, 2, 3 };
+            string[] name = { "Marketing", "Sales", "Engineering" };
 
+            for (int i = 0; i < departmentId.Length; i++)
+            {
+                Department department = new Department(departmentId[i], name[i]);
+                departments.Add(department);
+            }
         }
 
         /**
@@ -54,7 +57,10 @@ namespace TEams
         private void PrintDepartments()
         {
             Console.WriteLine("------------- DEPARTMENTS ------------------------------");
-
+            for (int i=0; i<departments.Count; i++)
+            {
+                Console.WriteLine(departments[i].Name);
+            }
         }
 
         /**
