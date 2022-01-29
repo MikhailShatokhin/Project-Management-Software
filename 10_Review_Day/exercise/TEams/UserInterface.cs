@@ -114,6 +114,7 @@ namespace TEams
                 if (n.Department.Name == "Engineering")
                 {
                     project1.TeamMembers.Add(n);
+                    return; //this is what was causing out project employee count output to be wrong. Stops the loop right after the first employee
                 }
             }
         }
@@ -131,6 +132,7 @@ namespace TEams
                 if (n.Department.Name == "Marketing")
                 {
                     project2.TeamMembers.Add(n);
+                    return; //this is what was causing out project employee count output to be wrong. Stops the loop right after the first employee
                 }
             }
         }
