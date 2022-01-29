@@ -54,6 +54,19 @@ namespace TEams
                 departments.Add(department);
             }
         }
+        private Department GetDepartmentByName(string desiredDepartment)
+        {
+            Department result =null;
+            foreach (Department d in departments)
+            {
+                if (desiredDepartment == d.Name)
+                {
+                    result = d;
+                    break;
+                }
+                else { result=null; }
+            } return result; 
+        }  
 
         /**
          * Print out each department in the collection.
@@ -78,10 +91,10 @@ namespace TEams
             employee1.LastName = "Johnson";
             employee1.Email = "djohnson@teams.com";
             employee1.Salary = 60000;
-            employee1.Department = departments[2];
+            employee1.Department = GetDepartmentByName("Engineering");
             employee1.HireDate = today;
-            Employee employee2 = new Employee(2, "Angie", "Smith", "asmith@teams.com", departments[2], today);
-            Employee employee3 = new Employee(3, "Margaret", "Thompson", "mthompson@teams.com", departments[0], today);
+            Employee employee2 = new Employee(2, "Angie", "Smith", "asmith@teams.com", GetDepartmentByName("Engineering"), today);
+            Employee employee3 = new Employee(3, "Margaret", "Thompson", "mthompson@teams.com", GetDepartmentByName("Marketing"), today);
             employee2.RaiseSalary(10);
             
             employees.Add(employee1);
