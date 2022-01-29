@@ -111,23 +111,18 @@ namespace TEams
             projects[project1.Name] = project1;
             foreach (Employee n in project1.TeamMembers)
             {
-                if (n.Department.Name != "Engineering")
+                
+                if (n.Department.Name == "Engineering")
                 {
-                    
+                    project1.TeamMembers.Add(n);
+                    return;
+                }
+                else
+                {
                     project1.TeamMembers.Remove(n);
                     return;
                 }
             }
-
-
-
-            //{
-            //    if(employees[i].Department.Name == departments[2].Name)
-            //    {
-            //        project1.TeamMembers.Add(employees[i]);
-            //    }
-            //    
-            //}
         }
 
         /**
