@@ -97,7 +97,7 @@ namespace TEams
             Console.WriteLine("\n------------- EMPLOYEES ------------------------------");
             for (int people = 0; people < employees.Count; people++)
             {
-                Console.WriteLine(employees[people].FullName + " (" + employees[people].Salary +") " + employees[people].Department.Name);
+                Console.WriteLine(employees[people].FullName + " (" + employees[people].Salary.ToString("C2") +") " + employees[people].Department.Name);
             }
         }
 
@@ -114,7 +114,7 @@ namespace TEams
                 if (n.Department.Name == "Engineering")
                 {
                     project1.TeamMembers.Add(n);
-                    return; //this is what was causing out project employee count output to be wrong. Stops the loop right after the first employee
+                    //return; this is what was causing out project employee count output to be wrong. Stops the loop right after the first employee
                 }
             }
         }
@@ -132,7 +132,7 @@ namespace TEams
                 if (n.Department.Name == "Marketing")
                 {
                     project2.TeamMembers.Add(n);
-                    return; //this is what was causing out project employee count output to be wrong. Stops the loop right after the first employee
+                    //return; this is what was causing out project employee count output to be wrong. Stops the loop right after the first employee
                 }
             }
         }

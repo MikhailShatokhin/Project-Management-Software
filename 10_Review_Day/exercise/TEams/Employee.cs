@@ -38,7 +38,7 @@ namespace TEams
         //Methods
         public double RaiseSalary(double percent)
         {
-            return Salary = (Salary * percent) + Salary;
+            return Salary = (Salary * (percent/100)) + Salary;
         }
 
 
