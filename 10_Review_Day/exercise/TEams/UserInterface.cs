@@ -72,21 +72,21 @@ namespace TEams
          */
         private void CreateEmployees()
         {
+            DateTime today = DateTime.Today;
             Employee employee1 = new Employee();
             employee1.FirstName = "Dean";
             employee1.LastName = "Johnson";
             employee1.Email = "djohnson@teams.com";
             employee1.Salary = 60000;
             employee1.Department = departments[2];
-            employee1.HireDate = "08/21/2020";
-            Employee employee2 = new Employee(2, "Angie", "Smith", "asmith@teams.com", departments[2], "08/21/2020");
-            Employee employee3 = new Employee(3, "Margaret", "Thompson", "mthompson@teams.com", departments[0], "08/21/2020");
+            employee1.HireDate = today;
+            Employee employee2 = new Employee(2, "Angie", "Smith", "asmith@teams.com", departments[2], today);
+            Employee employee3 = new Employee(3, "Margaret", "Thompson", "mthompson@teams.com", departments[0], today);
             employee2.RaiseSalary(10);
             
             employees.Add(employee1);
             employees.Add(employee2);
             employees.Add(employee3);
-
         }
 
         /**
@@ -106,7 +106,7 @@ namespace TEams
          */
         private void CreateTeamsProject()
         {
-            Project project1 = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
+            Project project1 = new Project("TEams", "Project Management Software", DateTime.Today, DateTime.Today.AddDays(30));
             //project1.TeamMembers = employees;
             projects[project1.Name] = project1;
             foreach (Employee n in employees)
@@ -124,7 +124,8 @@ namespace TEams
          */
         private void CreateLandingPageProject()
         {
-            Project project2 = new Project("Marketing Landing Page", "Lead Capture Landing Page For Marketing", "10/10/2020", "10/17/2020");
+            DateTime startDate = DateTime.Today.AddDays(31);
+            Project project2 = new Project("Marketing Landing Page", "Lead Capture Landing Page For Marketing", startDate, startDate.AddDays(7));
            //project2.TeamMembers = employees;
            projects[project2.Name] = project2;
             foreach (Employee n in employees)

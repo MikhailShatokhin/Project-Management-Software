@@ -13,7 +13,7 @@ namespace TEams
         public string Email { get; set; }
         public double Salary { get; set; } = 60000;
         public Department Department { get; set; }
-        public string HireDate { get; set; }
+        public DateTime HireDate { get; set; }
         public string FullName 
         {
             get
@@ -22,7 +22,7 @@ namespace TEams
             }
         }
         //Constructors
-        public Employee(long employeeId, string firstName, string lastName, string email, Department department, string hireDate)
+        public Employee(long employeeId, string firstName, string lastName, string email, Department department, DateTime hireDate)
         {
             EmployeeId = employeeId;
             FirstName = firstName;
