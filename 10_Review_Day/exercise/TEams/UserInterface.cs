@@ -113,9 +113,7 @@ namespace TEams
             {
                 if (n.Department.Name == "Engineering")
                 {
-                    
                     project1.TeamMembers.Add(n);
-                    return;
                 }
             }
         }
@@ -133,7 +131,6 @@ namespace TEams
                 if (n.Department.Name == "Marketing")
                 {
                     project2.TeamMembers.Add(n);
-                    return;
                 }
             }
         }
