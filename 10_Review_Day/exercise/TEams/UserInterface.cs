@@ -107,14 +107,14 @@ namespace TEams
         private void CreateTeamsProject()
         {
             Project project1 = new Project("TEams", "Project Management Software", "10/10/2020", "11/10/2020");
-            project1.TeamMembers = employees;
+            //project1.TeamMembers = employees;
             projects[project1.Name] = project1;
-            foreach (Employee n in project1.TeamMembers)
+            foreach (Employee n in employees)
             {
-                if (n.Department.Name != "Engineering")
+                if (n.Department.Name == "Engineering")
                 {
                     
-                    project1.TeamMembers.Remove(n);
+                    project1.TeamMembers.Add(n);
                     return;
                 }
             }
@@ -136,13 +136,13 @@ namespace TEams
         private void CreateLandingPageProject()
         {
             Project project2 = new Project("Marketing Landing Page", "Lead Capture Landing Page For Marketing", "10/10/2020", "10/17/2020");
-           project2.TeamMembers = employees;
+           //project2.TeamMembers = employees;
            projects[project2.Name] = project2;
-            foreach (Employee n in project2.TeamMembers)
+            foreach (Employee n in employees)
             {
-                if (n.Department.Name != "Marketing")
+                if (n.Department.Name == "Marketing")
                 {
-                    project2.TeamMembers.Remove(n);
+                    project2.TeamMembers.Add(n);
                     return;
                 }
             }
